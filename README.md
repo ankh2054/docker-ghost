@@ -64,3 +64,9 @@ To run it:
 
 [1]: https://github.com/etopian/docker-gen
 [2]: http://jasonwilder.com/blog/2014/03/25/automated-nginx-reverse-proxy-for-docker/
+
+
+### To-Do:
+
+* Creaet ghost GROUP
+* REmove mysqlclient and mariadev after install

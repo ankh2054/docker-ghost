@@ -23,7 +23,9 @@ ENV PACKAGES="\
   nodejs-npm \
   bash \
   supervisor \
-  mysql \ 
+  mysql \
+  mysql-client\
+  mariadb-dev \
 "
 
 RUN apk --update add --no-cache $PACKAGES  \

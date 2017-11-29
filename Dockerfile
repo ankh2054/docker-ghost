@@ -33,11 +33,12 @@ RUN apk --update add --no-cache $PACKAGES  \
 EXPOSE 80
 ENV NODE_ENV production
 
-
-
 # Add files
 ADD files/nginx.conf /etc/nginx/nginx.conf
 ADD files/supervisord.conf /etc/supervisord.conf
 ADD files/my.cnf /etc/mysql/my.cnf
+ADD start.sh /
 
-CMD ["pm2", "start", "index.js", "--name", "blog", "--no-daemon"]
+# Entrypoint
+RUN chmod u+x /start.sh
+CMD /start.sh

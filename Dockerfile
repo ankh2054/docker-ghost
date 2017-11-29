@@ -11,6 +11,8 @@ ENV ALPINE_VERSION=3.6
 #   * bash: Required for Wikijs install
 #   * supervisor: Control starting of applications
 #   * Mysql: Mysql server
+#   * mysql-client: Required for automatic install of Mysql and creation of DB.
+#   * mariadb-dev: Required for automatic install of Mysql and creation of DB.
 
 
 

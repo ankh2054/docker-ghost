@@ -122,7 +122,7 @@ apply_www_permissions(){
 #
 # ################
 
-install_ghost-cli() {
+install_ghost(){
 
 # Add ghost user
 adduser -h /DATA/www -D -S  ghost
@@ -133,7 +133,6 @@ npm install -g ghost-cli
 # Create Directory and set permissions
 mkdir -p /DATA/www/ghost
 chown ghost:ghost /var/www/ghost
-
 
 
 }
@@ -147,7 +146,7 @@ create_ghost_database
 set_mysql_root_pw
 create_www_dir
 apply_www_permissions
-install_ghost-cli
+install_ghost
 
 # Supervisor
 # Start Supervisor 

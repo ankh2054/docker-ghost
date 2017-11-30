@@ -124,34 +124,31 @@ apply_www_permissions(){
 
 install_ghost(){
 
-echo "Installing Ghost if not already istalled"
-  if [ ! -e /DATA/www/current/index.js ]  ; then
-
 # Add ghost user and group
 echo "Creating ghost user and group"
 addgroup ghost
 adduser -h /DATA/www -D -S  ghost
 adduser ghost ghost
-
-
-# Intall Ghost CLI
-echo "Installing Ghost-CLI"
-npm install -g ghost-cli
-
-# Create Directory and set permissions
 chown ghost:ghost -R /DATA/www/
 
-# Intall Ghost
-echo "Installing Ghost"
-ghost install --db mysql --no-prompt --no-stack --dir /DATA/www  --no-setup
+echo "Installing Ghost if not already istalled"
+  if [ ! -e /DATA/www/current/index.js ]  ; then
+  
+  # Intall Ghost CLI
+  echo "Installing Ghost-CLI"
+  npm install -g ghost-cli
 
-# Configuring Ghost
-echo "Ghost Setup...."
-/DATA/www
-ghost config --db mysql --dbhost localhost --dbuser ${DB_USER} --dbpass ${DB_PASS} --dbname ${DB_NAME} --url ${GHOST_URL}
+  # Intall Ghost
+  echo "Installing Ghost"
+  ghost install --db mysql --no-prompt --no-stack --dir /DATA/www  --no-setup
 
-echo "Ghost create DB"
-ghost setup migrate
+  # Configuring Ghost
+  echo "Ghost Setup...."
+  /DATA/www
+  ghost config --db mysql --dbhost localhost --dbuser ${DB_USER} --dbpass ${DB_PASS} --dbname ${DB_NAME} --url ${GHOST_URL}
+
+  echo "Ghost create DB"
+  ghost setup migrate
 
 else
     echo "Ghost already installed"

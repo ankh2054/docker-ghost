@@ -38,10 +38,13 @@ This will create a new Ghost with the following values:
 
 	$ Virtual Host: - www.test.co.uk
 	$ Mysql DB: ghost
-	$ Mysql user to access django DB: ghost
+	$ Mysql user to access ghost DB: ghost
 	$ Mysql password for user: ghost
 	$ Mysql root password: securepassword
 	
+
+# Once completed you need to access the container and run the ghost install command
+
 
 
 # NGINX-PROXY

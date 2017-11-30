@@ -34,7 +34,7 @@ docker run  --name docker.ghost --expose 80 \
 
  ```
 
-This will create a new DJANGO APP with the following values:
+This will create a new Ghost with the following values:
 
 	$ Virtual Host: - www.test.co.uk
 	$ Mysql DB: ghost

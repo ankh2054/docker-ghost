@@ -134,9 +134,17 @@ echo "Installing Ghost if not already istalled"
   echo "Installing Ghost-CLI"
   npm install -g ghost-cli
 
-  # Intall Ghost
+  # Install Ghost
   echo "Installing Ghost"
   ghost install --db mysql --no-prompt --no-stack --dir /DATA/www  --no-setup
+
+  # Install Prism Code highlighting
+  cp /tmp/prism.css /DATA/www/content/themes/casper/assets/css
+  cp /tmp/prism.js /DATA/www/content/themes/casper/assets/js
+  cd /tmp
+    sed -i -e "/Styles'n'Scripts/r prism.css.conf" \
+           -e "/jQuery + Fitvids, which makes all video embeds responsive /r prism.js.conf" \
+           /DATA/www/content/themes/casper/default.hbs
 
   # Configuring Ghost
   echo "Ghost Setup...."

@@ -43,6 +43,10 @@ ENV NODE_ENV production
 ADD files/nginx.conf /etc/nginx/nginx.conf
 ADD files/supervisord.conf /etc/supervisord.conf
 ADD files/my.cnf /etc/mysql/my.cnf
+ADD files/prism.js /tmp/prism.js
+ADD files/prism.css /tmp/prism.css
+ADD files/prism.js.conf /tmp/prism.js.conf
+ADD files/prism.css.conf /tmp/prism.css.conf
 ADD start.sh /
 
 # Entrypoint

@@ -1,4 +1,4 @@
-ghost install --db mysql --no-prompt --no-stack --dir /DATA/www  --no-#!/bin/sh
+#!/bin/sh
 
 
 # 1.MYSQL SETUP 

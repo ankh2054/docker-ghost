@@ -124,6 +124,9 @@ apply_www_permissions(){
 
 install_ghost(){
 
+echo "Installing Ghost if not already istalled"
+  if [ ! -e /DATA/www/current/index.js ]  ; then
+
 # Add ghost user and group
 echo "Creating ghost user and group"
 addgroup ghost
@@ -150,6 +153,10 @@ ghost config --db mysql --dbhost localhost --dbuser ${DB_USER} --dbpass ${DB_PAS
 echo "Ghost create DB"
 ghost setup migrate
 
+else
+    echo "Ghost already installed"
+
+fi
 
 }
 

@@ -13,6 +13,7 @@ ENV ALPINE_VERSION=3.6
 #   * Mysql: Mysql server
 #   * mysql-client: Required for automatic install of Mysql and creation of DB.
 #   * mariadb-dev: Required for automatic install of Mysql and creation of DB.
+#   * sudo: Required for Ghost-install.
 
 
 
@@ -28,6 +29,7 @@ ENV PACKAGES="\
   mysql \
   mysql-client\
   mariadb-dev \
+  sudo \
 "
 
 RUN apk --update add --no-cache $PACKAGES  \

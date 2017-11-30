@@ -148,6 +148,7 @@ echo "Installing Ghost if not already istalled"
   ghost config --db mysql --dbhost localhost --dbuser ${DB_USER} --dbpass ${DB_PASS} --dbname ${DB_NAME} --url ${GHOST_URL}
 
   echo "Ghost create DB"
+  cd /DATA/www &&  \
   ghost setup migrate
 
 else

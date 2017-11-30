@@ -86,10 +86,6 @@ set_mysql_root_pw() {
       echo "Setting Mysql root password"
       /usr/bin/mysqladmin -u root password "${ROOT_PWD}"
 
-      # shutdown mysql reeady for supervisor to start mysql.
-      timeout=10
-      echo "Shutting down Mysql ready for supervisor"
-      /usr/bin/mysqladmin -u root --password=${ROOT_PWD} shutdown
       
       else 
        echo "Mysql root password already set"
@@ -150,6 +146,11 @@ echo "Installing Ghost if not already istalled"
   echo "Ghost create DB"
   cd /DATA/www &&  \
   ghost setup migrate
+  
+  # shutdown mysql reeady for supervisor to start mysql.
+  timeout=20
+  echo "Shutting down Mysql ready for supervisor"
+  /usr/bin/mysqladmin -u root --password=${ROOT_PWD} shutdown
 
 else
     echo "Ghost already installed"

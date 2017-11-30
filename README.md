@@ -73,5 +73,5 @@ To run it:
 
 ### To-Do:
 
-* Creaet ghost GROUP
-* REmove mysqlclient and mariadev after install
+* Remove mysqlclient and mariadev after install
+* REmove sudo after install

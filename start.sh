@@ -145,7 +145,7 @@ echo "Installing Ghost if not already istalled"
   # Configuring Ghost
   echo "Ghost Setup...."
   cd /DATA/www &&  \
-  ghost config --db mysql --dbhost localhost --dbuser ${DB_USER} --dbpass ${DB_PASS} --dbname ${DB_NAME} --url ${GHOST_URL}
+  ghost config --db mysql --dbhost localhost --dbuser ${DB_USER} --dbpass ${DB_PASS} --dbname ${DB_NAME} --url ${GHOST_URL} 
 
   echo "Ghost create DB"
   cd /DATA/www &&  \
@@ -155,6 +155,8 @@ else
     echo "Ghost already installed"
 
 fi
+# Perform final permissoin change
+chown ghost:ghost -R /DATA/www/
 
 }
 

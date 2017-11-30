@@ -144,6 +144,7 @@ ghost install --db mysql --no-prompt --no-stack --dir /DATA/www  --no-setup
 
 # Configuring Ghost
 echo "Ghost Setup...."
+/DATA/www
 ghost config --db mysql --dbhost localhost --dbuser ${DB_USER} --dbpass ${DB_PASS} --dbname ${DB_NAME} --url ${GHOST_URL}
 
 echo "Ghost create DB"

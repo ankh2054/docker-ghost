@@ -114,7 +114,7 @@ create_www_dir() {
 
 apply_www_permissions(){
   echo "Applying www permissions"
-  chown -R nginx:nginx /DATA/www /DATA/logs
+  chown -R nginx:nginx /DATA/logs
 
 }
 
@@ -131,11 +131,18 @@ adduser -h /DATA/www -D -S  ghost
 adduser ghost ghost 
 
 # Intall Ghost CLI
+echo "Installing Ghost-CLI"
 npm install -g ghost-cli
 
 # Create Directory and set permissions
-mkdir -p /DATA/www/ghost
-chown ghost:ghost /var/www/ghost
+chown ghost:ghost /var/www/
+
+# Intall Ghost
+echo "Installing Ghost"
+ghost install --db mysql --no-prompt --no-stack --dir /DATA/www  --no-setup
+
+# Configuring Ghost
+echo "Configuring Ghost"
 
 
 }
@@ -145,8 +152,8 @@ create_data_dir
 create_run_dir
 create_log_dir
 mysql_default_install
-create_ghost_database
-set_mysql_root_pw
+#create_ghost_database
+#set_mysql_root_pw
 create_www_dir
 apply_www_permissions
 install_ghost

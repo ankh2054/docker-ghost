@@ -28,6 +28,7 @@ docker run  --name docker.ghost --expose 80 \
  -e 'DB_NAME=ghost' \
  -e 'DB_USER=ghost' \
  -e 'DB_PASS=ghost' \
+ -e 'GHOST_URL=http://www.test.co.uk' \
  -e 'ROOT_PWD=securepassword' \
  -v /data/sites/www.test.co.uk/mysql:/var/lib/mysql \
  -v /data/sites/www.test.co.uk:/DATA ghost
@@ -36,7 +37,8 @@ docker run  --name docker.ghost --expose 80 \
 
 This will create a new Ghost with the following values:
 
-	$ Virtual Host: - www.test.co.uk
+	$ Virtual Host: www.test.co.uk
+	$ Ghost URL: http://www.test.co.uk
 	$ Mysql DB: ghost
 	$ Mysql user to access ghost DB: ghost
 	$ Mysql password for user: ghost

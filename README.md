@@ -45,8 +45,6 @@ This will create a new Ghost with the following values:
 	$ Mysql root password: securepassword
 	
 
-# Once completed you need to access the container and run the ghost install command
-
 
 
 # NGINX-PROXY

@@ -124,8 +124,11 @@ apply_www_permissions(){
 
 install_ghost(){
 
-# Add ghost user
+# Add ghost user and group
+echo "Creating ghost user and group"
+addgroup ghost
 adduser -h /DATA/www -D -S  ghost
+adduser ghost ghost 
 
 # Intall Ghost CLI
 npm install -g ghost-cli

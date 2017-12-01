@@ -45,8 +45,10 @@ ADD files/supervisord.conf /etc/supervisord.conf
 ADD files/my.cnf /etc/mysql/my.cnf
 ADD files/prism.js /tmp/prism.js
 ADD files/prism.css /tmp/prism.css
+ADD files/custom.css /tmp/custom.css
 ADD files/prism.js.conf /tmp/prism.js.conf
 ADD files/prism.css.conf /tmp/prism.css.conf
+
 ADD start.sh /
 
 # Entrypoint

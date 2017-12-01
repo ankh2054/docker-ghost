@@ -141,6 +141,7 @@ echo "Installing Ghost if not already istalled"
   # Install Prism Code highlighting
   cp /tmp/prism.css /DATA/www/content/themes/casper/assets/css
   cp /tmp/prism.js /DATA/www/content/themes/casper/assets/js
+  cp /tmp/custom.css /DATA/www/content/themes/casper/assets/css
   cd /tmp
     sed -i -e "/Styles'n'Scripts/r prism.css.conf" \
            -e "/jQuery + Fitvids, which makes all video embeds responsive /r prism.js.conf" \

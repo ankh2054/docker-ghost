@@ -45,7 +45,9 @@ This will create a new Ghost with the following values:
 	$ Mysql root password: securepassword
 	
 
+# Custom CSS
 
+Any custom CSS you want to add to your Ghost blog, add this to files/custom.css. Upon the Blog creation this will be copied over and added to the Casp theme `casper/default.hbs` for loading.
 
 # NGINX-PROXY
 

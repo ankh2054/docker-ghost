@@ -150,11 +150,11 @@ echo "Installing Ghost if not already istalled"
   # Configuring Ghost
   echo "Ghost Setup...."
   cd /DATA/www &&  \
-  ghost config --db mysql --dbhost localhost --dbuser ${DB_USER} --dbpass ${DB_PASS} --dbname ${DB_NAME} --url ${GHOST_URL} 
+  sudo -u ghost ghost config --db mysql --dbhost localhost --dbuser ${DB_USER} --dbpass ${DB_PASS} --dbname ${DB_NAME} --url ${GHOST_URL} 
 
   echo "Ghost create DB"
   cd /DATA/www &&  \
-  ghost setup migrate
+  sudo -u ghost ghost setup migrate
   
   # shutdown mysql reeady for supervisor to start mysql.
   timeout=20

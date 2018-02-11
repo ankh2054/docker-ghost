@@ -136,7 +136,7 @@ echo "Installing Ghost if not already istalled"
 
   # Install Ghost
   echo "Installing Ghost"
-  ghost install --db mysql --no-prompt --no-stack --dir /DATA/www  --no-setup --version=10.18.2
+  sudo -u ghost  ghost install --db mysql --no-prompt --no-stack --dir /DATA/www  --no-setup
 
   # Install Prism Code highlighting
   cp /tmp/prism.css /DATA/www/content/themes/casper/assets/css

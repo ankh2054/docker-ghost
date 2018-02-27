@@ -28,7 +28,6 @@ docker run  --name docker.ghost --expose 80 \
  -e 'DB_NAME=ghost' \
  -e 'DB_USER=ghost' \
  -e 'DB_PASS=ghost' \
- -e 'GHOST_VER=10.18.2' \
  -e 'GHOST_URL=http://www.test.co.uk' \
  -e 'ROOT_PWD=securepassword' \
  -v /data/sites/www.test.co.uk/mysql:/var/lib/mysql \
